@@ -1,0 +1,9 @@
+.venv/
+models/*.pkl
+__pycache__/
+*.pyc
+.DS_Store
+.env
+emnist-digits-train.csv
+emnist-digits-test.csv
+*.h5

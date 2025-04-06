@@ -1,0 +1,60 @@
+/* Mobile-first design */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background: #f8f9fa;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  #canvas {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    aspect-ratio: 1/1;
+    border: 2px solid #ddd;
+    background: black;
+  }
+  
+  .controls {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+  }
+  
+  button, select {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button {
+    background: #4CAF50;
+    color: white;
+  }
+  
+  button:hover {
+    background: #45a049;
+  }
+  
+  #modelSelector {
+    background: white;
+    border: 1px solid #ddd;
+  }
+  
+  #predictions {
+    margin-top: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
