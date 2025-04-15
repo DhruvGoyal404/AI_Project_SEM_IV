@@ -16,5 +16,3 @@ Things to be done:
 6. Need model selector dropdown functioalitty
 7. responsive pg
 8. TBD
-9. upload functionality
-10. resize
