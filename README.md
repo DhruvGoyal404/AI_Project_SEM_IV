@@ -8,11 +8,13 @@ To run:
 7. Run python app.py, go to http://127.0.0.1:5000/
 
 Things to be done:
-1. styling of the page
+<!-- 1. styling of the page -->
 2. deployement
-3. press n to clear whiteborard
-4. add thapar logo in static folder png
-5. Wrapped all JavaScript code in a DOMContentLoaded event listener to ensure elements exist before accessing them.
+<!-- 3. press n to clear whiteborard -->
+<!-- 4. add thapar logo in static folder png -->
+<!-- 5. Wrapped all JavaScript code in a DOMContentLoaded event listener to ensure elements exist before accessing them.
 6. Need model selector dropdown functioalitty
-7. responsive pg
-8. TBD
+7. responsive pg -->
+<!-- 8. TBD -->
+9. upload functionality
+10. resize

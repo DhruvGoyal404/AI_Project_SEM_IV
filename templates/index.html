@@ -2,20 +2,49 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digit Recognizer</title>
+    <title>Thapar Digit Recognizer</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='thapar_logo.png') }}" type="image/png">
 </head>
 <body>
+    <header>
+        <img src="{{ url_for('static', filename='thapar_logo.png') }}" alt="Thapar Logo" class="logo">
+        <h1>Thapar University<br><span>Handwritten Digit Recognition System</span></h1>
+    </header>
+    
     <div class="container">
-        <h1>Draw a Digit (0-9)</h1>
-        <canvas id="canvas" width="400" height="400"></canvas>
-        <div class="buttons">
-            <button onclick="clearCanvas()">Clear</button>
-            <button onclick="predict()">Predict</button>
+        <div class="canvas-wrapper">
+            <canvas id="canvas" width="400" height="400"></canvas>
+            <div class="canvas-label">Draw in this area</div>
         </div>
-        <div id="predictions"></div>
+        
+        <div class="controls">
+            <button class="btn-clear" onclick="clearCanvas()">Clear (N)</button>
+            <select id="modelSelector" class="model-selector">
+                <option value="All">All Models</option>
+                <option value="KNN">K-Nearest Neighbors</option>
+                <option value="Logistic Regression">Logistic Regression</option>
+                <option value="SVM">Support Vector Machine</option>
+                <option value="Decision Tree">Decision Tree</option>
+                <option value="Random Forest">Random Forest</option>
+                <option value="XGBoost">XGBoost</option>
+            </select>
+            <button class="btn-predict" onclick="predict()">Predict</button>
+        </div>
+
+        <div id="predictions" class="predictions-box"></div>
     </div>
+
+    <!-- Update the footer section -->
+    <footer>
+        <div class="team-info">
+            <div class="team-content">
+                <p>AI Project - Sem IV - Computer Engineering</p>
+                <p>Team Members: Dhruv Goyal (102303099) | Jeevant Verma (102303100)</p>
+            </div>
+        </div>
+    </footer>
+    
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

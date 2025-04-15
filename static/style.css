@@ -1,60 +1,228 @@
-/* Mobile-first design */
+/* Base Styles */
+:root {
+  --primary-blue: #002B5B;
+  --secondary-gold: #FFB344;
+  --accent-teal: #1A5F7A;
+  --light-bg: #f8f9fa;
+  --white: #ffffff;
+}
+
 body {
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    background: #f8f9fa;
-  }
-  
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, var(--light-bg) 0%, #e6e9f0 100%);
+  min-height: 100vh;
+  color: var(--primary-blue);
+  line-height: 1.6;
+}
+
+header {
+  text-align: center;
+  padding: 1.5rem 0;
+  background: var(--white);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+  height: 70px;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0;
+  color: var(--primary-blue);
+  font-weight: 600;
+}
+
+h1 span {
+  font-size: 1.2rem;
+  color: var(--accent-teal);
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--white);
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+}
+
+.canvas-wrapper {
+  position: relative;
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+#canvas {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+  border: 2px solid var(--primary-blue);
+  border-radius: 10px;
+  background: #000;
+  cursor: crosshair;
+  transition: box-shadow 0.3s ease;
+}
+
+#canvas:hover {
+  box-shadow: 0 0 15px rgba(0,43,91,0.2);
+}
+
+.canvas-label {
+  text-align: center;
+  margin: 1rem 0;
+  color: var(--accent-teal);
+  font-weight: 500;
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-clear {
+  background: linear-gradient(135deg, var(--accent-teal) 0%, var(--primary-blue) 100%);
+  color: var(--white);
+}
+
+.btn-predict {
+  background: linear-gradient(135deg, var(--secondary-gold) 0%, #FF9800 100%);
+  color: var(--primary-blue);
+}
+
+.model-selector {
+  padding: 12px;
+  border: 2px solid var(--primary-blue);
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--primary-blue);
+  min-width: 200px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.model-selector:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0,43,91,0.1);
+}
+
+.predictions-box {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--light-bg);
+  border-radius: 10px;
+  border: 1px solid rgba(0,43,91,0.1);
+}
+
+.predictions-box h3 {
+  margin-top: 0;
+  color: var(--accent-teal);
+  border-bottom: 2px solid var(--secondary-gold);
+  padding-bottom: 0.5rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--primary-blue);
+  color: var(--white);
+  margin-top: auto;
+}
+
+.team-info {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.small-logo {
+  height: 40px;
+  opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .container {
-    width: 100%;
-    max-width: 600px;
+      margin: 1rem;
+      padding: 1.5rem;
   }
   
-  #canvas {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    aspect-ratio: 1/1;
-    border: 2px solid #ddd;
-    background: black;
+  h1 {
+      font-size: 1.5rem;
+  }
+  
+  h1 span {
+      font-size: 1rem;
   }
   
   .controls {
-    display: flex;
-    gap: 10px;
-    margin: 15px 0;
+      gap: 0.8rem;
   }
   
-  button, select {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  button, .model-selector {
+      width: 100%;
+      text-align: center;
   }
   
-  button {
-    background: #4CAF50;
-    color: white;
+  .model-selector {
+      min-width: auto;
   }
   
-  button:hover {
-    background: #45a049;
+  .team-info {
+      flex-direction: column;
+      text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+      font-size: 14px;
   }
   
-  #modelSelector {
-    background: white;
-    border: 1px solid #ddd;
+  .btn-clear, .btn-predict {
+      padding: 10px 20px;
   }
   
-  #predictions {
-    margin-top: 20px;
-    padding: 15px;
-    background: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  .predictions-box {
+      padding: 1rem;
   }
+}
+
+.error {
+  color: #dc3545;
+  font-weight: 500;
+  padding: 10px;
+  background: #ffe6e6;
+  border-radius: 5px;
+}
+
+.team-content {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.team-content p {
+  margin: 0.5rem 0;
+}
